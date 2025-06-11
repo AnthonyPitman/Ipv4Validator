@@ -5,6 +5,8 @@
         <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <AssemblyName>ipv4-validator</AssemblyName>
+        <AssemblyVersion>0.0.1</AssemblyVersion>
     </PropertyGroup>
 
 </Project>
