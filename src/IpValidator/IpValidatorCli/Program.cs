@@ -1,9 +1,28 @@
-﻿namespace IpValidatorCli;
+﻿using System.Reflection;
+
+namespace IpValidatorCli;
 
 internal static class Program
 {
     static int Main(string[] args)
     {
+        foreach (var a in args)
+        {
+            if (a.Contains("-h") || a.Contains("-?") || a.Contains("--help"))
+            {
+                Console.WriteLine("Usage - ipv4-validator.exe [<IPv4 Address>]");
+                return 0;
+            }
+
+            if (a.Contains("--version"))
+            {
+                var version = Assembly.GetExecutingAssembly().GetName().Version ??
+                              throw new InvalidOperationException("Assembly version was not found.");
+                Console.WriteLine($"v{version.Major}.{version.Minor}.{version.Build}");
+                return 0;
+            }
+        }
+
         if (args.Length == 0)
         {
             var exit = RunInteractiveMode();
