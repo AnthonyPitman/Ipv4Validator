@@ -6,11 +6,14 @@ internal static class Program
 {
     static int Main(string[] args)
     {
+        var helpMessage =
+            $"Usage - ipv4-validator.exe [<Ipv4 Address>]{Environment.NewLine}{Environment.NewLine}`<Ipv4 Address>` is a value such as 192.168.1.1.";
+
         foreach (var a in args)
         {
             if (a.Contains("-h") || a.Contains("-?") || a.Contains("--help"))
             {
-                Console.WriteLine("Usage - ipv4-validator.exe [<IPv4 Address>]");
+                Console.WriteLine(helpMessage);
                 return 0;
             }
 
@@ -31,7 +34,7 @@ internal static class Program
 
         if (args.Length != 1)
         {
-            Console.WriteLine("Usage - ipv4-validator.exe [<IPv4 Address>]");
+            Console.WriteLine(helpMessage);
             return -1;
         }
 
