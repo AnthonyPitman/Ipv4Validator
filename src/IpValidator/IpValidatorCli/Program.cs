@@ -4,6 +4,8 @@ namespace IpValidatorCli;
 
 internal static class Program
 {
+    // TODO: consider using actual command line parser
+    // TODO: consider if the exe should be ipv4.exe and act as a classifier as well
     static int Main(string[] args)
     {
         var helpMessage =

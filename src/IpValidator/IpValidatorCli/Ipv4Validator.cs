@@ -2,6 +2,9 @@
 
 public class Ipv4Validator
 {
+    // TODO: make the validation treat the address as an 32-bit unsigned integer.
+    // TODO: consider further refinement of value to classify into classes such as a Class C network address.
+    // TODO: consider support other formats than `192.168.1.1` such as hex (or bin)
     public static string Validate(string input)
     {
         var split = input.Split('.');
